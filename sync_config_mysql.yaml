@@ -1,0 +1,28 @@
+connection:
+  #Required. Absolute url to Release Manager
+  url: 'http://localhost/cda'
+  #Required. If Release Manager has more than 1 client, system must be specified. E.g: AUTOMIC/100/USERNAME/DEPARTMENT
+  username: '100/AUTOMIC/AUTOMIC'
+  #Required.
+  password: 'automic'
+folder: 
+application:
+  #If application.name is not set, chart name will be used
+  name: 'mysql'
+  folder: 'DEMOAPP'
+  type: Generic
+artifactSource:
+  name: Helm Source
+  type: Helm
+parentComponent:
+  type: Helm Chart  
+nestedComponent:
+  type: Helm Chart Container
+deploymentPackage:
+  type: Helm
+  #chartLocation dynamic property of Package. Will be used to install/upgrade the chart from Deployment Target agent
+  #If this value is not set, the property will be prompted at execution  
+  chartLocation: 'stable/mysql'
+workflow:
+  name: deploy
+  type: Install

@@ -1,0 +1,1 @@
+C:\Automic\Helm.2.RM\helm2rm.cmd sync -f C:\Automic\Helm.2.RM\sync_config_mysql.yaml --set folder=DEMOAPP mysql/
